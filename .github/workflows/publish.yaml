@@ -31,6 +31,9 @@ jobs:
                   mv dist/ ../public/lucky-draw
               working-directory: lucky-draw
 
+            - name: Copy index README
+              run: cp README.md ./public
+
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3
               if: ${{ github.ref == 'refs/heads/main' }}
