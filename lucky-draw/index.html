@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucky Draw</title>
+  </head>
+  <body>
+    <!-- prettier-ignore -->
+    <py-config>
+        [[fetch]]
+        files = ["./luckydraw.py"]
+    </py-config>
+    <py-script src="./app.py"> </py-script>
+    <h1>🎄 聖蛋大抽醬 🎁</h1>
+    <div id="fill-page">
+      <form class="pure-form pure-form-stacked">
+        <fieldset>
+          <!--<label for="stacked-names">抽醬名單</label>-->
+          <textarea
+            id="participants"
+            placeholder="抽醬參加者..."
+            py-change="fp.click()"
+          ></textarea>
+        </fieldset>
+      </form>
+    </div>
+    <div id="draw-page">
+      <ul id="result-list">
+        <template id="result-template">
+          <li>A -&gt; C</li>
+        </template>
+      </ul>
+      <button
+        id="draw-page-bt"
+        class="pure-button pure-button-primary"
+        py-click="dp.click()"
+      >
+        抽！！！
+      </button>
+    </div>
+  </body>
+</html>

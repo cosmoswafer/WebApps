@@ -1,0 +1,20 @@
+{
+  "name": "lucky-draw",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prettier-watch": "npx onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
+  },
+  "devDependencies": {
+    "onchange": "^7.1.0",
+    "prettier": "2.8.1",
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "purecss": "^3.0.0"
+  }
+}
