@@ -34,8 +34,8 @@ class FillPage:
         self.store.fill_page = self
 
         self.participants_textarea = Element("participants")
-        self.participants_textarea.write(localStorage.getItem("participants"))
         if p := localStorage.getItem("participants"):
+            self.participants_textarea.write(p)
             self.restoreParticipants(p)
 
     def updateParticipants(self):
